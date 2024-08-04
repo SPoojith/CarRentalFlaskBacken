@@ -1,0 +1,118 @@
+1) Python variable and function
+2) flask intro
+3) default path and other router path
+4) into to post man - 
+
+5) 4 different methods get put post delete
+    a) get - when we data from server and  display data in url
+    b) post - when we data from from with send any parameters and  display data in url
+    c) put - update
+    d) delete - delet any records
+
+
+1) create a ’sports’ Database and a collection named ‘Players’.
+    use sports; //create a db;
+
+    db.Players.insertOne({
+        'name ': 'cr7',
+		'age ': '40',
+    	'team ': 'portugal',
+  		'sports ': 'football'
+    })
+
+    db.Players.insertMany(
+        [
+            {
+                'name ': 'cr7',
+                'age ': '40',
+                'team ': 'portugal',
+                'sports ': 'football'
+            },
+            {
+                'name ': 'cr7',
+                'age ': '40',
+                'team ': 'portugal',
+                'sports ': 'football'
+            },
+            {
+                'name ': 'cr7',
+                'age ': '40',
+                'team ': 'portugal',
+                'sports ': 'football'
+            },
+        ]
+    )
+2) Insert using insert and insert many
+	player 1
+		name = cr7
+		age = 40
+    	team = portugal
+  		sports = football
+    
+    player 2
+		name = messi
+		age = 43
+    	team = argintina
+  		sports = football
+
+    player 3
+		name = virat
+		age = 28
+    	team = India
+  		sports = cricket
+
+    player 4
+		name = Rafel Nadal
+		age = 45
+    	team = spain
+  		sports = tennis
+
+    player 5
+		name = Diego Sebastián Schwartzman
+		age = 32
+    	team = argintina
+  		sports = tennis
+
+3)update age for virat to 38;
+
+    db.Players.Update({'name':'virat'},{$set:{age:38}});
+
+4)display only argintinian football player
+
+    db.Players.find(
+        {
+            $And:
+            [
+                {
+                    'team':{''}
+                },
+                {
+                   'sports' : 'football' 
+                },
+            ]
+        }
+    )
+5)delete player 4
+
+    db.Players.deleteOne(
+        {
+           'name' : 'Rafel Nadal'
+        }
+    )
+
+6)disply football player or whoes age in 38
+
+db.Players.find(
+        {
+            $Or:
+            [
+                {
+                    'age':38;
+                },
+                {
+                   'sports' : 'football' 
+                },
+            ]
+        }
+    )
+
