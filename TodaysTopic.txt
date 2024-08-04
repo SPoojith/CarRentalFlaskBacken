@@ -116,3 +116,19 @@ db.Players.find(
         }
     )
 
+
+
+echo "# CarRentalFlaskBacken" >> README.md
+git init
+git add README.md
+
+git add .
+git commit -m "cmt msg"
+git branch -M main
+git remote add origin https://github.com/SPoojith/CarRentalFlaskBacken.git
+git push -u origin main
+
+
+1) Complete overview
+2) React testing
+3) git clone and pull.
